@@ -7,18 +7,33 @@ using namespace std;
 class Boss
 {
     private: //only the boss can access
-        int mySalary = 0;
+
 
     public:  //anyone can access.
+        int mySalary = 0;
+        int userHours = 0;
+        int bonus = 600;
+        int hours = 63;
         int takeInput()
         {
-            cout << "Enter your salary: ";
+            cout << "Enter your initial salary: ";
             cin >> mySalary;
+            cout << "How many hours did you work: ";
+            cin >> userHours;
             return 0;
         }
         int showEverything()
         {
             cout << "\nSalary: " << mySalary;
+            return 0;
+        }
+        int calculateBossHours()
+        {
+            if(userHours >= hours)
+            {
+                mySalary+=bonus;
+            }
+            cout << "\nFinal Salary: " << mySalary;
             return 0;
         }
 };
@@ -39,6 +54,15 @@ class Workers : public Boss
             cout << "\nName: " << names;
             return 0;
         }
+        int calculateWorkerHours()
+        {
+            if(userHours >= hours)
+            {
+                mySalary+=bonus;
+            }
+            cout << "\nFinal Salary: " << mySalary;
+            return 0;
+        }
 };
 
 int main()
@@ -49,12 +73,15 @@ int main()
     cout << "Boss:\n";
     b1.takeInput();
     b1.showEverything();
+    b1.calculateBossHours();
 
     cout << "\n\nWorkers:\n";
     w1.takeInput();
     w1.askName();
     w1.showEverything();
+    w1.calculateWorkerHours();
     w1.showName();
 
+    cout << "\n\n";
     return 0;
 }
