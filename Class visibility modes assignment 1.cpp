@@ -76,10 +76,10 @@ int main()
     b1.calculateBossHours();
 
     cout << "\n\nWorkers:\n";
-    w1.takeInput();
+    w1.takeInput(); //--------------------> from Base class
     w1.askName();
-    w1.showEverything();
-    w1.calculateWorkerHours();
+    w1.showEverything();  //--------------> from Base class
+    w1.calculateWorkerHours(); //---------> uses variables/data members from base class
     w1.showName();
 
     cout << "\n\n";
