@@ -6,7 +6,8 @@ class billing
 {
 private:
     string name;
-    int id, units, fbill;
+    int id, fbill;
+    double units;
 
 public:
     void read();
