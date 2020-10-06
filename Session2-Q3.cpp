@@ -11,7 +11,8 @@ void registerStorageClass();
 void autoStorageClass()
 {
     int a;
-    cout << "Enter something: ";
+    cout << "\n\n*****Auto Storage Class Example*****\n\n";
+    cout << "Enter a number: ";
     cin >> a;
     cout << a << endl;
 }
@@ -19,6 +20,7 @@ void autoStorageClass()
 void staticStorageClass()
 {
     static int a = 10;
+    cout << "\n\n*****Static Storage Class Example*****\n\n";
     for(int i = 0; i<a--; i++)
     {
         cout << i << "\t" << a << endl;
@@ -28,12 +30,14 @@ void staticStorageClass()
 int g = 500;                        //global declaration
 void externStorageClass()
 {
+    cout << "\n\n*****Extern Storage Class Example*****\n\n";
     extern int g;
     cout << "Global variable: " << g << endl;
 }
 
 void registerStorageClass()
 {
+    cout << "\n\n*****Register Storage Class Example*****\n\n";
     register int a = 7;
     for(int i = 0; i<--a; i++)
     {
