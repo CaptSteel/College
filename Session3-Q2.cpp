@@ -16,6 +16,7 @@ int main()
 {
     int n1, n2;
     int choice, err;
+    char ch;
     do
     {   system("cls");
         cout << "\nChoose:\n";
@@ -61,7 +62,9 @@ int main()
         {
             cout << "\nEnter a valid option:\n";
         }
-    }while(true);
+        cout << "Press Y to run again.\n";
+        cin >> ch;
+    }while(ch =='y' || ch == 'Y');
 
     return 0;
 }
