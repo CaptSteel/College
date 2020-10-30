@@ -1,23 +1,22 @@
 #include<iostream>
-#include<string.h>
-
-
-/*
-Create a class Student having fields name, rollno, division, id and marks in 3 subjects.
-The class also has three methods accept_details(),  average_marks() and display_details() 
-as member procedures. Accept the details of two students as command line arguments 
-and Display their information.
-*/
+#include<string>
 
 using namespace std;
 
 class Student
 {
-    string name, id, division;
-    int rollno;
-    int m1, m2, m3;
 
     public:
+        string name, id, division;
+        string rollno;
+        string m1, m2, m3;
+
+        Student()
+        {
+            name = id = division = rollno = m1 = m2 = m3 = "Unknown";
+        }
+
+    /*
         void accept_details()
         {
             std::cout << "Enter details:\n";
@@ -37,10 +36,11 @@ class Student
             std::cout << "Subject 3: ";
             std::cin >> m3;                     //m3
         }
-        void average_marks()
+        */
+        /*void average_marks()
         {
             std::cout << "Average marks: " << ((m1+m2+m3)/3) << std::endl;
-        }
+        }*/
         void display_details()
         {
             std::cout << "\n\nName: " << name << std::endl;
@@ -54,11 +54,32 @@ class Student
         }
 };
 
-int main()
+int main(int argc, char* argv[])
 {
-    Student obj1, obj2;
-    obj1.accept_details();
-    obj1.display_details();
-    obj1.average_marks();
+    Student obj1;
+    Student obj2;
+    //obj1.accept_details();
+    if(argc > 1)
+    {
+        obj1.name = argv[1];
+        obj1.id = argv[2];
+        obj1.rollno = argv[3];
+        obj1.division = argv[4];
+        obj1.m1 = argv[5];
+        obj1.m2 = argv[6];
+        obj1.m3 = argv[7];
+
+        obj2.name = argv[8];
+        obj2.id = argv[9];
+        obj2.rollno = argv[10];
+        obj2.division = argv[11];
+        obj2.m1 = argv[12];
+        obj2.m2 = argv[13];
+        obj2.m3 = argv[14];
+
+        obj1.display_details();
+        obj2.display_details();
+    }
+    //obj1.average_marks();
     return 0;
 }
