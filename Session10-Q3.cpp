@@ -1,13 +1,11 @@
-//WAP that accepts two different data-types as arguments to the template function and returns the value.
-
 #include<iostream>
 #include<conio.h>
 
 using namespace std;
 
-template <class dAdd>
+template <class dAdd, class dAdd2>
 
-dAdd AddNos(dAdd a1, dAdd a2)
+dAdd AddNos(dAdd a1, dAdd2 a2)
 {
     return (a1 + a2);
 }
@@ -24,7 +22,7 @@ int main()
         cout << "Enter a float: ";
         cin >> n2;
         cout << n1 << " + " << n2 << " = " << AddNos(n1,n2) << endl;
-        cout << "\nPress Y to run again.\n";
+        cout << "\nPress Y to run again.\n\n";
         ch = getch();
     } while (ch=='y'||ch=='Y');
     return 0;
